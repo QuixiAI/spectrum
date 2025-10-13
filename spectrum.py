@@ -248,7 +248,7 @@ def main():
         print(f"No existing SNR results file found for {args.model_name}. Proceeding with SNR calculation.")
         batch_size = input_dialog(title="Batch Size", text="Enter the batch size:").run()
         batch_size = int(batch_size) if batch_size else 1
-        modifier = ModelModifier(model_name=args.model_name, batch_size=batch_size)
+        modifier = ModelModifier(model_name=args.model_name, batch_size=batch_size, top_percent=args.top_percent)
         selected_weight_types = modifier.interactive_select_weights()
         if selected_weight_types:
             modifier.assess_layers_snr(selected_weight_types)
