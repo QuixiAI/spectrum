@@ -234,7 +234,7 @@ def main():
     parser = argparse.ArgumentParser(description="Process SNR data for layers.")
     parser.add_argument('--model-name', type=str, required=True, help='Model name or path to the model')
     parser.add_argument('--top-percent', type=int, default=None, help='Top percentage of layers to select, overriding the default')
-    parser.add_argument('--all-layer-types', type=bool, default=False, help='Whether to include all layers in selection')
+    parser.add_argument('--all-layer-types', action='store_true', help='Whether to include all layers in selection')
     parser.add_argument('--batch-size', type=int, default=None, help='Batch size to use in SnR calculation')
     args = parser.parse_args()
 
